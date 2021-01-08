@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icons</title>
+    <script src="https://kit.fontawesome.com/1ae85f96ba.js" crossorigin="anonymous"></script>
+    <style>
+        .fas, .fab {
+            font-size: 10rem;
+            display: block;
+            margin: 1rem auto;
+            text-align: center;
+        }
+        .color-red {
+            color: red;
+        }
+        .color-blue {
+            color: blue;
+        }
+        .color-orange {
+            color: orange;
+        }
+
+        .font-size-10rem {
+            font-size: 10rem;
+        }
+
+        .font-size-20rem {
+            font-size: 20rem;
+        }
+    </style>
+</head>
+<body>
+    <i id="ps2" class="fab fa-playstation open"></i>
+    <i id="snowman" class="fas fa-snowman"></i>
+    <i id="play" class="fas fa-play"></i>
+    <i id="spaceshuttle" class="fas fa-space-shuttle"></i>
+    <i id="ps" class="fab fa-playstation"></i>
+
+    <div>
+        <button id="redPillButton">Red Pill</button>
+        <button id="bluePillButton">Blue Pill</button>
+    </div>
+
+    <div>
+        <button id="increaseBtn"><i class="fas fa-plus"></i></button>
+        <button id="decreaseBtn"><i class="fas fa-minus"></i></button>
+    </div>
+</body>
+<script>
+    let snowman, play, spaceshuttle, ps, ps2, redPillButton, bluePillButton, increaseBtn, decreaseBtn;
+
+    snowman = document.getElementById('snowman');
+    play = document.getElementById('play');
+    spaceshuttle = document.getElementById('spaceshuttle');
+    ps = document.getElementById('ps');
+    ps2 = document.getElementById('ps2');
+    redPillButton = document.getElementById('redPillButton');
+    bluePillButton = document.getElementById('bluePillButton');
+    increaseBtn = document.getElementById('increaseBtn');
+    decreaseBtn = document.getElementById('decreaseBtn');
+
+    iconMargin = "6rem";
+
+    snowman.style.color = "red";
+    play.style.color = "orange";
+    spaceshuttle.style.color = "green";
+    ps.style.color = "purple";
+
+    snowman.style.marginBottom = iconMargin;
+    play.style.marginBottom = iconMargin;
+    spaceshuttle.style.marginBottom = iconMargin;
+    ps.style.marginBottom = iconMargin;
+    ps2.style.marginBottom = iconMargin;
+
+    if (ps2.classList.contains('open')) {
+        ps2.classList.remove('open');
+        ps2.classList.add('close');
+        ps2.classList.add('color-red');
+    } else {
+        ps2.classList.remove('close');
+        ps2.classList.add('open');
+        ps2.classList.add('color-orange');
+    }
+
+    redPillButton.addEventListener('click',
+        function(myParam1) {
+            snowman.style.color = "";
+            play.style.color = "";
+            spaceshuttle.style.color = "";
+            ps.style.color = "";
+
+            snowman.classList.add('color-red');
+            play.classList.add('color-red');
+            spaceshuttle.classList.add('color-red');
+            ps.classList.add('color-red');
+            ps2.classList.add('color-red');
+
+            snowman.classList.remove('color-blue');
+            play.classList.remove('color-blue');
+            spaceshuttle.classList.remove('color-blue');
+            ps.classList.remove('color-blue');
+            ps2.classList.remove('color-blue');
+        }
+    );
+
+    bluePillButton.addEventListener('click',
+        function(myParam1) {
+            snowman.style.color = "";
+            play.style.color = "";
+            spaceshuttle.style.color = "";
+            ps.style.color = "";
+
+            snowman.classList.add('color-blue');
+            play.classList.add('color-blue');
+            spaceshuttle.classList.add('color-blue');
+            ps.classList.add('color-blue');
+            ps2.classList.add('color-blue');
+
+            snowman.classList.remove('color-red');
+            play.classList.remove('color-red');
+            spaceshuttle.classList.remove('color-red');
+            ps.classList.remove('color-red');
+            ps2.classList.remove('color-red');
+        }
+    );
+
+    increaseBtn.addEventListener('click', makeBigger );
+    decreaseBtn.addEventListener('click', makeSmaller );
+
+    function makeBigger() {
+        console.log('Make bigger');
+        snowman.classList.remove('font-size-10rem');
+        play.classList.remove('font-size-10rem');
+        spaceshuttle.classList.remove('font-size-10rem');
+        ps.classList.remove('font-size-10rem');
+        ps2.classList.remove('font-size-10rem');
+        snowman.classList.add('font-size-20rem');
+        play.classList.add('font-size-20rem');
+        spaceshuttle.classList.add('font-size-20rem');
+        ps.classList.add('font-size-20rem');
+        ps2.classList.add('font-size-20rem');
+    };
+
+    function makeSmaller() {
+        console.log('Make smaller');
+        snowman.classList.remove('font-size-20rem');
+        play.classList.remove('font-size-20rem');
+        spaceshuttle.classList.remove('font-size-20rem');
+        ps.classList.remove('font-size-20rem');
+        ps2.classList.remove('font-size-20rem');
+        snowman.classList.add('font-size-10rem');
+        play.classList.add('font-size-10rem');
+        spaceshuttle.classList.add('font-size-10rem');
+        ps.classList.add('font-size-10rem');
+        ps2.classList.add('font-size-10rem');
+    }
+
+
+    /* addEventListener */
+
+
+
+    /* removeEventListener */
+/*
+
+if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
+    fn();
+} else {
+    document.addEventListener('DOMContentLoaded', fn);
+}
+
+teranary operator
+
+in line if else statement
+
+condition ? expression1 : expression2
+
+is this true ? this is value : else this is my value
+
+attachEvent boiler plate event
+
+boolean is this true?
+
+does browser support 
+
+*/
+
+/* quiz-form
+
+bootstrap
+
+vanilla JS
+
+5 questions
+
+what color is a the sky
+
+style questions positively
+
+style question negatively
+
+USE CSS and font awesome
+
+variables
+
+arrays
+
+if/else
+
+loops
+
+email a link to the repo
+
+type answer
+
+
+
+*/
+
+</script>
+</html>

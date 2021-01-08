@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+</head>
+<body>
+    <label>What is your name?</label>
+    <input type="text" name="myname" id="myname">
+    <button id="talk" type="button">Say Hello</button>
+    <div id="output"></div>
+    
+    <script>
+        let talkBtn, nameInput, output;
+        talkBtn = document.getElementById('talk');
+        nameInput = document.getElementById('myname');
+        output = document.getElementById('output');
+
+        talkBtn.addEventListener('click', function() {
+            output.innerHTML = '<h1>Hello ' + nameInput.value + '</h1>';
+        });
+    </script>
+</body>
+</html>

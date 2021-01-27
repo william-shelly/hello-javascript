@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://kit.fontawesome.com/1ae85f96ba.js" crossorigin="anonymous"></script>
+<!--    <link rel="stylesheet" href="styles.css"> -->
+</head>
+<body>
+    <div class="container">
+        <h1></h1>
+        <p><a href="https://uagc-it-readiness.github.io/front-end-development-course-info/sessions/16.html#/24">Class Notes on Dates</a></p>
+        <p><a href="https://www.unixtimestamp.com/">UNIX Time Stamp</a></p>
+
+        <p>
+            <a href="https://uagc-it-readiness.github.io/front-end-development-course-info/sessions/19.html#/28">Regex Slides</a>
+        </p>
+        <p><a href="https://regexr.com">REGXR</a></p>
+
+        <p class="currentDateContainer"></p>
+
+
+
+
+
+<pre>
+new Date(year, month[, date[, hours[, minutes[, seconds[, milliseconds]]]]]);
+
+[] <- Denotes optional parameter
+
+Month parameter is 0 based.
+
+</pre>
+
+<h1></h1>Regex</h1>
+<pre>
+
+var str = "hello world, Hello class. hello things";
+var pattern = /hello/i;
+var newStr = str.replace(pattern, 'Goodbye');
+console.log(newStr);
+
+var str = "hello world, Hello class. hello things";
+var pattern = /hello/ig;
+var newStr = str.replace(pattern, 'Goodbye');
+console.log(newStr);
+
+</pre>
+
+Regex Test
+<pre>
+var str = "Lorem ipsum dolor";
+var patt = new RegExp(/lorem/i);
+var res = patt.test(str);
+
+</pre>
+<h2>Regex Useful Patterns</h2>
+
+<pre>
+/[a-z]/gi - Letters only
+/[0-9]/gi - Numbers only
+/^[a-z0-9\_-]{3,16}$/ - User Name min 3 max 16
+/^([a-z0-9\_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$/ - Email
+/^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]\*)\*\\/?$/ - URL
+</pre>
+
+<h2>Regex Example</h2>
+
+<pre>
+
+    let pattern = new RegExp(/sleep/i);
+    
+    if(pattern.text(newTask.value)) {
+        alert('Sorry you can\'t add that');
+        return;
+    }
+
+    text(pattern)
+</pre>
+
+</div>
+
+    <script>
+    var title = document.querySelector('title');
+    var headline = document.querySelector('h1');
+    var pageName = 'Dates';
+    title.innerText = pageName;
+    headline.innerHTML = pageName;
+
+    var currentDateContainer = document.querySelector('.currentDateContainer');
+
+    var now = new Date();
+    currentDateContainer.innerText = now;
+
+    /* regex */
+    var str = "hello world, Hello class. Hello things";
+    var pattern = /hello/i;
+    var newStr = str.replace(pattern, 'Goodbye');
+    console.log(newStr);
+
+    // Goodbye world, Hello class. Hello thing
+
+    var strB = "Lorem ipsum dolor";
+    var patt = new RegExp(/lorem/i);
+    var res = patt.test(strB);
+    console.log(res);
+
+
+
+    </script>
+</body>
+</html>
